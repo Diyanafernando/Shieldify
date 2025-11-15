@@ -1,10 +1,11 @@
 "use client";
 import { useState, type FormEvent } from "react";
 import { Input } from "@/components/ui/input";
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
   const [url, setUrl] = useState("");
-
+const router = useRouter();
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     alert(`Scanning website: ${url}`);
@@ -20,8 +21,18 @@ export default function Home() {
           <h1 className="text-2xl font-bold text-green-700">Shieldify</h1>
           <ul className="flex items-center gap-6 text-green-700 font-medium">
             <li>
-              <a href="#features" className="hover:text-green-600 transition">
+              <a onClick={()=>        router.push('/login')} href="#features" className="hover:text-green-600 transition">
                 Features
+              </a>
+            </li>
+            <li>
+              <a onClick={()=>        router.push('/login')} href="#features" className="hover:text-green-600 transition">
+                Login
+              </a>
+            </li>
+            <li>
+              <a onClick={()=>        router.push('/login')} href="#features" className="hover:text-green-600 transition">
+                Signup
               </a>
             </li>
             <li>

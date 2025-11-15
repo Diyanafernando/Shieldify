@@ -1,11 +1,11 @@
 "use client";
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 import { Input } from "@/components/ui/input";
 
 export default function Home() {
   const [url, setUrl] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     alert(`Scanning website: ${url}`);
   };
@@ -128,7 +128,7 @@ export default function Home() {
             Questions or feedback? Let’s connect!
           </p>
           <a
-            href="mailto:info@shieldify.com"
+            href="#contact"
             className="bg-green-600 text-white px-6 py-3 rounded-md hover:bg-green-700 transition"
           >
             Contact Us
